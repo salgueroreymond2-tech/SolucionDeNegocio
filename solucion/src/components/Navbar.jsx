@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import logo from '../assets/the-barber-club-logo.png'
 
 const links = [
   ['Servicios', '/servicios'],
@@ -7,7 +8,6 @@ const links = [
   ['Horario', '/horario'],
   ['Ubicacion', '/ubicacion'],
   ['Contacto', '/contacto'],
-  ['Datos', '/datos'],
 ]
 
 export default function Navbar() {
@@ -16,8 +16,7 @@ export default function Navbar() {
   return (
     <header className="site-header">
       <Link className="brand" to="/" onClick={() => setIsOpen(false)}>
-        <span className="brand-mark">C</span>
-        <span>Casa <em>Brava</em></span>
+        <img className="brand-logo" src={logo} alt="The Barber Club CR" />
       </Link>
       <button className="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded={isOpen} onClick={() => setIsOpen(!isOpen)}>
         <span />

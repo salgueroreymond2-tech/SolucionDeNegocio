@@ -1,0 +1,509 @@
+<!DOCTYPE html><html class="dark" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    .gold-glow {
+      box-shadow: 0 0 20px -2px rgba(212, 175, 55, 0.35);
+    }
+    .gold-border-glow {
+      box-shadow: 0 0 15px -3px rgba(212, 175, 55, 0.25), inset 0 0 0 1px rgba(212, 175, 55, 0.45);
+    }
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "background": "#0a0a0a",
+            "surface": "#0a0a0a",
+            "surface-container-lowest": "#080808",
+            "surface-container-low": "#141414",
+            "surface-container": "#181818",
+            "surface-container-high": "#222222",
+            "surface-container-highest": "#2c2c2c",
+            "primary": "#d4af37",
+            "primary-container": "#d4af37",
+            "primary-fixed": "#e5c158",
+            "primary-fixed-dim": "#c29e2f",
+            "on-primary": "#0a0a0a",
+            "on-primary-container": "#1c1500",
+            "secondary": "#e5c158",
+            "secondary-fixed": "#f5d77f",
+            "secondary-fixed-dim": "#d9b348",
+            "on-secondary": "#1c1500",
+            "on-surface": "#f5f3ef",
+            "on-surface-variant": "#b5ad9e",
+            "outline": "#8a7c5c",
+            "outline-variant": "rgba(212, 175, 55, 0.2)",
+            "surface-tint": "#d4af37",
+            "error": "#ffb4ab",
+            "on-error": "#690005"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "fontFamily": {
+            "label-telemetry": ["JetBrains Mono"],
+            "body-md": ["Geist"],
+            "body-sm": ["Geist"],
+            "headline-sm": ["Geist"],
+            "display-hero": ["Geist"],
+            "headline-md": ["Geist"],
+            "headline-lg": ["Geist"],
+            "body-lg": ["Geist"],
+            "display-hero-mobile": ["Geist"],
+            "label-caps": ["JetBrains Mono"]
+          },
+          "fontSize": {
+            "label-telemetry": ["13px", {"lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+            "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "body-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+            "display-hero": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.04em", "fontWeight": "600"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+            "display-hero-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+            "label-caps": ["11px", {"lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500"}]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-[#0a0a0a] text-on-surface flex flex-col antialiased selection:bg-[#d4af37] selection:text-[#0a0a0a]">
+<!-- Luxury Sleek Header with Metallic Gold Accent Micro-border -->
+<header class="fixed top-0 w-full z-50 pt-safe bg-[#0a0a0a]/90 backdrop-blur-xl border-b border-[rgba(212,175,55,0.2)] shadow-[0_1px_25px_rgba(0,0,0,0.8)]">
+<div class="h-16 px-4 flex items-center justify-between">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-[#141414] border border-[#d4af37]/40 flex items-center justify-center text-[#d4af37] shadow-[0_0_10px_rgba(212,175,55,0.2)]">
+<span class="font-label-telemetry font-bold text-[14px]">CB</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md font-semibold text-[17px] leading-none text-on-surface tracking-tight">CASA BRAVA</span>
+<span class="font-label-caps text-label-caps text-[#d4af37] font-medium uppercase tracking-widest mt-0.5 flex items-center gap-1">
+            LAB // SERVICIOS
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="p-0.5 rounded-lg bg-[#141414] border border-[rgba(212,175,55,0.3)] ring-1 ring-[#d4af37]/20">
+<img alt="Profile" class="w-8 h-8 rounded-md object-cover brightness-95 contrast-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDllOCteriF2MgSTtDEZsS8_3tZTIKguvtfxTwB39qc28DWFc2PZufIVGiGbC2W_9y1EJCleNa9mYDrYQINsFRRgUwN9Y4wdF29dMQgtj_IT5i7aTT212FziMhagzDeyQAoTq5Yv_C1z7yjBQWsHm63GM-G5Zzx9j5LmvFj1yHFCw0Z_Z_e5oPBCWaub0TwyoFnE389y-v82t50TE4SSAri_gXhmR0Lmtgi8Vweh8pw7ASQqOkctx78Q">
+</div>
+</div>
+</div>
+</header>
+<main class="flex flex-col relative w-full pt-16 pb-28 bg-[#0a0a0a] min-h-screen">
+<div class="flex flex-col w-full">
+<!-- Luxury Ambient Atmosphere -->
+<div class="px-5 pt-5 pb-5 flex flex-col gap-3">
+<!-- Category Eyebrow & Live Status -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#d4af37] animate-pulse shadow-[0_0_8px_#d4af37]"></span>
+<span class="font-label-caps text-label-caps text-[#d4af37] font-semibold uppercase tracking-widest">Lo que hacemos · Protocolo 2025</span>
+</div>
+<span class="font-label-telemetry text-label-telemetry text-[#e5c158] bg-[#141414] border border-[rgba(212,175,55,0.25)] px-2 py-0.5 rounded text-[11px]">SYS // v2.5</span>
+</div>
+<!-- Luxury Hero Headings (Black & Gold) -->
+<div class="flex flex-col mt-1">
+<h1 class="font-display-hero-mobile text-display-hero-mobile text-on-surface tracking-tight font-semibold leading-tight">
+            El ritual
+          </h1>
+<span class="font-headline-lg text-headline-lg text-[#d4af37] font-medium tracking-tight -mt-1 drop-shadow-[0_0_12px_rgba(212,175,55,0.35)]">
+            alta precisión.
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 max-w-xs leading-relaxed">
+            Técnica clásica combinada con ingeniería capilar contemporánea, vapor tónico y formulaciones activas.
+          </p>
+</div>
+<!-- Precision Specimen Visual Card with Gold Elements -->
+<div class="relative w-full h-36 rounded-xl overflow-hidden bg-[#141414] mt-1 border border-[rgba(212,175,55,0.25)] shadow-[0_4px_24px_rgba(0,0,0,0.6)] group">
+<img class="w-full h-full object-cover opacity-60 filter contrast-125 saturate-75" data-alt="Close up artisanal barber details in low light studio, burnished vintage straight razor, warm amber leather chair, steaming white towel with herbs, dark minimalist wood surface and warm directional light highlighting precision craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfGyPL--uj4vvM1jI4iYhlY6-ok_BSfWixjWjeO6TAyO9nAWiJJBFAPjs9cvWl8_vSUqlw_GR6N3zELezSY3VRiq_H1rdy7PFc0AG-Fdqbo_T6N7BmuIRTMr_8n-qD8flv8ryHIU35zP-iWOvUuOiOlW4xgOM-cny7THG6rOKEpaU9KZQLVlvjpcaFHQn9c-W-_ZRNIfhxaBQU1sE23UOO1XPyyhdVlo0mlWWQRoBb7S1S9ltBXHCrUA">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-transparent"></div>
+<!-- Gold grid overlay line -->
+<div class="absolute top-2 right-3 font-label-telemetry text-[10px] text-[#d4af37]/80 tracking-widest uppercase">SPEC // 01-CB</div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[#d4af37] text-[18px]">precision_manufacturing</span>
+<span class="font-label-caps text-[11px] text-on-surface tracking-wider uppercase">Acabado micrométrico &amp; toalla tónica</span>
+</div>
+<span class="font-label-telemetry text-[11px] text-[#d4af37] font-semibold bg-[#0a0a0a]/90 border border-[rgba(212,175,55,0.3)] px-2 py-0.5 rounded">06 SERVICIOS</span>
+</div>
+</div>
+</div>
+<!-- Luxury Gold Segmented Filter Bar -->
+<div class="px-5 pb-3">
+<div class="flex items-center gap-2 overflow-x-auto pb-1.5 no-scrollbar">
+<button class="filter-chip active flex-shrink-0 px-3.5 py-1.5 rounded-lg bg-[#d4af37] text-[#0a0a0a] font-label-caps text-label-caps font-semibold tracking-wider transition-all gold-glow border border-[#d4af37]" type="button">
+            TODOS (6)
+          </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-lg bg-[#141414] text-on-surface-variant font-label-caps text-label-caps tracking-wider border border-[rgba(212,175,55,0.2)] hover:border-[#d4af37]/60 hover:text-on-surface transition-all" type="button">
+            BARBA &amp; CORTE
+          </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-lg bg-[#141414] text-on-surface-variant font-label-caps text-label-caps tracking-wider border border-[rgba(212,175,55,0.2)] hover:border-[#d4af37]/60 hover:text-on-surface transition-all" type="button">
+            CUIDADO CAPILAR
+          </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-lg bg-[#141414] text-on-surface-variant font-label-caps text-label-caps tracking-wider border border-[rgba(212,175,55,0.2)] hover:border-[#d4af37]/60 hover:text-on-surface transition-all" type="button">
+            DETALLE
+          </button>
+</div>
+</div>
+<!-- Services Ledger Rows in Dark Card Containers (#141414) with subtle antique gold borders -->
+<div class="flex flex-col w-full px-5 gap-3 pb-32" id="services-container">
+<!-- Service 01 -->
+<div class="service-card group relative rounded-xl p-4 bg-[#141414] border border-[rgba(212,175,55,0.2)] transition-all duration-200 cursor-pointer hover:border-[#d4af37]/50" data-duration="45 min" data-id="01" data-name="Corte + Barba" data-price="18000">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3 min-w-0">
+<span class="font-label-telemetry text-label-telemetry text-[#d4af37] pt-0.5 select-none font-semibold">01</span>
+<div class="flex flex-col min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight">Corte + Barba</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                  Corte y arreglo completo para un acabado impecable. Incluye doble toalla caliente, rasurado al detalle y fijación mate.
+                </p>
+<div class="flex items-center gap-3 mt-3">
+<span class="inline-flex items-center gap-1 font-label-telemetry text-[12px] text-[#e5c158] bg-[#1c1c1c] border border-[rgba(212,175,55,0.2)] px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px] text-[#d4af37]">schedule</span> 45 min
+                  </span>
+<span class="font-label-telemetry text-[13px] text-[#d4af37] font-semibold tracking-wide">
+                    ₡18.000
+                  </span>
+</div>
+</div>
+</div>
+<!-- Select action element -->
+<button class="select-btn flex-shrink-0 w-8 h-8 rounded-lg bg-[#1e1e1e] border border-[rgba(212,175,55,0.25)] text-on-surface-variant flex items-center justify-center transition-all group-hover:border-[#d4af37]/60 group-hover:text-[#d4af37]" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<!-- Accent badge on card -->
+<div class="mt-3 pt-2.5 border-t border-[rgba(212,175,55,0.15)] flex items-center justify-between text-on-surface-variant/80">
+<span class="font-label-caps text-[10px] text-[#d4af37] uppercase tracking-wider font-semibold">Recomendado del Lab</span>
+<span class="font-label-telemetry text-[11px] text-on-surface-variant/70 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-[#d4af37]">biotech</span> Bálsamo botánico
+            </span>
+</div>
+</div>
+<!-- Service 02 -->
+<div class="service-card group relative rounded-xl p-4 bg-[#141414] border border-[rgba(212,175,55,0.2)] transition-all duration-200 cursor-pointer hover:border-[#d4af37]/50" data-duration="30 min" data-id="02" data-name="Arreglo de Barba" data-price="12000">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3 min-w-0">
+<span class="font-label-telemetry text-label-telemetry text-[#d4af37] pt-0.5 select-none font-semibold">02</span>
+<div class="flex flex-col min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight">Arreglo de Barba</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                  Perfilado y cuidado de barba con toalla caliente, rasurado a navaja japonesa y aceites botánicos de cedro y romero.
+                </p>
+<div class="flex items-center gap-3 mt-3">
+<span class="inline-flex items-center gap-1 font-label-telemetry text-[12px] text-[#e5c158] bg-[#1c1c1c] border border-[rgba(212,175,55,0.2)] px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px] text-[#d4af37]">schedule</span> 30 min
+                  </span>
+<span class="font-label-telemetry text-[13px] text-[#d4af37] font-semibold tracking-wide">
+                    ₡12.000
+                  </span>
+</div>
+</div>
+</div>
+<button class="select-btn flex-shrink-0 w-8 h-8 rounded-lg bg-[#1e1e1e] border border-[rgba(212,175,55,0.25)] text-on-surface-variant flex items-center justify-center transition-all group-hover:border-[#d4af37]/60 group-hover:text-[#d4af37]" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Service 03 -->
+<div class="service-card group relative rounded-xl p-4 bg-[#141414] border border-[rgba(212,175,55,0.2)] transition-all duration-200 cursor-pointer hover:border-[#d4af37]/50" data-duration="30 min" data-id="03" data-name="Corte Clásico" data-price="12000">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3 min-w-0">
+<span class="font-label-telemetry text-label-telemetry text-[#d4af37] pt-0.5 select-none font-semibold">03</span>
+<div class="flex flex-col min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight">Corte Clásico</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                  Un corte atemporal adaptado a tu estilo y fisonomía craneal. Lavado tónico de eucalipto antes y después del peinado.
+                </p>
+<div class="flex items-center gap-3 mt-3">
+<span class="inline-flex items-center gap-1 font-label-telemetry text-[12px] text-[#e5c158] bg-[#1c1c1c] border border-[rgba(212,175,55,0.2)] px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px] text-[#d4af37]">schedule</span> 30 min
+                  </span>
+<span class="font-label-telemetry text-[13px] text-[#d4af37] font-semibold tracking-wide">
+                    ₡12.000
+                  </span>
+</div>
+</div>
+</div>
+<button class="select-btn flex-shrink-0 w-8 h-8 rounded-lg bg-[#1e1e1e] border border-[rgba(212,175,55,0.25)] text-on-surface-variant flex items-center justify-center transition-all group-hover:border-[#d4af37]/60 group-hover:text-[#d4af37]" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Visual Divider Spec Box with Antique Gold Accent -->
+<div class="p-3.5 rounded-xl bg-[#141414] border border-[rgba(212,175,55,0.3)] flex items-center gap-3 my-1">
+<span class="material-symbols-outlined text-[#d4af37] text-[24px] shrink-0">terminal</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-[10px] text-[#d4af37] uppercase tracking-widest font-semibold">Protocolo de servicio</span>
+<p class="font-body-sm text-[13px] text-on-surface leading-snug">"Tómate un espresso de especialidad o agua tónica mientras calibramos la hoja."</p>
+</div>
+</div>
+<!-- Service 04 -->
+<div class="service-card group relative rounded-xl p-4 bg-[#141414] border border-[rgba(212,175,55,0.2)] transition-all duration-200 cursor-pointer hover:border-[#d4af37]/50" data-duration="15 min" data-id="04" data-name="Depilación con Cera" data-price="5000">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3 min-w-0">
+<span class="font-label-telemetry text-label-telemetry text-[#d4af37] pt-0.5 select-none font-semibold">04</span>
+<div class="flex flex-col min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight">Depilación con Cera</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                  Detalle y despeje limpio en entrecejo, contornos de orejas y nariz utilizando cera elástica calmante con extracto de caléndula.
+                </p>
+<div class="flex items-center gap-3 mt-3">
+<span class="inline-flex items-center gap-1 font-label-telemetry text-[12px] text-[#e5c158] bg-[#1c1c1c] border border-[rgba(212,175,55,0.2)] px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px] text-[#d4af37]">schedule</span> 15 min
+                  </span>
+<span class="font-label-telemetry text-[13px] text-[#d4af37] font-semibold tracking-wide">
+                    ₡5.000
+                  </span>
+</div>
+</div>
+</div>
+<button class="select-btn flex-shrink-0 w-8 h-8 rounded-lg bg-[#1e1e1e] border border-[rgba(212,175,55,0.25)] text-on-surface-variant flex items-center justify-center transition-all group-hover:border-[#d4af37]/60 group-hover:text-[#d4af37]" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Service 05 -->
+<div class="service-card group relative rounded-xl p-4 bg-[#141414] border border-[rgba(212,175,55,0.2)] transition-all duration-200 cursor-pointer hover:border-[#d4af37]/50" data-duration="25 min" data-id="05" data-name="Tinte de Barba" data-price="10000">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3 min-w-0">
+<span class="font-label-telemetry text-label-telemetry text-[#d4af37] pt-0.5 select-none font-semibold">05</span>
+<div class="flex flex-col min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight">Tinte de Barba</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                  Cobertura natural y matizado discreto sin efecto artificial. Formulado sin amoníaco para proteger la piel sensible del rostro.
+                </p>
+<div class="flex items-center gap-3 mt-3">
+<span class="inline-flex items-center gap-1 font-label-telemetry text-[12px] text-[#e5c158] bg-[#1c1c1c] border border-[rgba(212,175,55,0.2)] px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px] text-[#d4af37]">schedule</span> 25 min
+                  </span>
+<span class="font-label-telemetry text-[13px] text-[#d4af37] font-semibold tracking-wide">
+                    ₡10.000
+                  </span>
+</div>
+</div>
+</div>
+<button class="select-btn flex-shrink-0 w-8 h-8 rounded-lg bg-[#1e1e1e] border border-[rgba(212,175,55,0.25)] text-on-surface-variant flex items-center justify-center transition-all group-hover:border-[#d4af37]/60 group-hover:text-[#d4af37]" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Service 06 -->
+<div class="service-card group relative rounded-xl p-4 bg-[#141414] border border-[rgba(212,175,55,0.2)] transition-all duration-200 cursor-pointer hover:border-[#d4af37]/50" data-duration="30 min" data-id="06" data-name="Corte de Niño" data-price="10000">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3 min-w-0">
+<span class="font-label-telemetry text-label-telemetry text-[#d4af37] pt-0.5 select-none font-semibold">06</span>
+<div class="flex flex-col min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight">Corte de Niño</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                  Paciencia, delicadeza y técnica para los más jóvenes (hasta 12 años). Incluye peinado estilizado y golosina artesanal de cortesía.
+                </p>
+<div class="flex items-center gap-3 mt-3">
+<span class="inline-flex items-center gap-1 font-label-telemetry text-[12px] text-[#e5c158] bg-[#1c1c1c] border border-[rgba(212,175,55,0.2)] px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px] text-[#d4af37]">schedule</span> 30 min
+                  </span>
+<span class="font-label-telemetry text-[13px] text-[#d4af37] font-semibold tracking-wide">
+                    ₡10.000
+                  </span>
+</div>
+</div>
+</div>
+<button class="select-btn flex-shrink-0 w-8 h-8 rounded-lg bg-[#1e1e1e] border border-[rgba(212,175,55,0.25)] text-on-surface-variant flex items-center justify-center transition-all group-hover:border-[#d4af37]/60 group-hover:text-[#d4af37]" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Luxury Dark Obsidian Glassmorphism Floating Booking Dock -->
+<div class="fixed bottom-16 left-0 right-0 z-40 px-4 pb-2 transition-transform duration-300" id="booking-dock">
+<div class="max-w-md mx-auto rounded-xl p-3.5 bg-[#141414]/95 border border-[rgba(212,175,55,0.35)] shadow-[0_4px_30px_rgba(0,0,0,0.8)] backdrop-blur-xl flex items-center justify-between gap-3">
+<div class="flex flex-col min-w-0 pl-1">
+<span class="font-label-caps text-[11px] text-[#d4af37] uppercase tracking-wider flex items-center gap-1.5 font-semibold" id="dock-status">
+<span class="w-2 h-2 rounded-full bg-[#d4af37] inline-block shadow-[0_0_8px_#d4af37]"></span>
+<span id="dock-counter">1 servicio seleccionado</span>
+</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-label-telemetry text-[#f5f3ef] font-semibold text-[15px] tracking-wide" id="dock-price">₡18.000</span>
+<span class="font-label-telemetry text-on-surface-variant/80 text-[11px]" id="dock-duration">· 45 min aprox</span>
+</div>
+</div>
+<button class="flex-shrink-0 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#d4af37] text-[#0a0a0a] font-label-caps text-[11px] font-bold uppercase tracking-wider shadow-[0_0_16px_rgba(212,175,55,0.45)] hover:bg-[#e5c158] transition-all active:scale-95 cursor-pointer" id="continue-btn" type="button">
+<span>Elegir Fecha</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+      (function() {
+        const cards = document.querySelectorAll('.service-card');
+        const dockCounter = document.getElementById('dock-counter');
+        const dockPrice = document.getElementById('dock-price');
+        const dockDuration = document.getElementById('dock-duration');
+        const continueBtn = document.getElementById('continue-btn');
+
+        // Pre-select service 01 to maintain an immediately actionable UX state
+        let selectedServices = new Map();
+        selectedServices.set('01', {
+          name: 'Corte + Barba',
+          price: 18000,
+          duration: 45
+        });
+
+        function updateCardUI(card, isSelected) {
+          const btn = card.querySelector('.select-btn');
+          const icon = btn.querySelector('.material-symbols-outlined');
+          if (isSelected) {
+            card.classList.remove('bg-[#141414]', 'border-[rgba(212,175,55,0.2)]');
+            card.classList.add('bg-[#1c1c1c]', 'gold-border-glow', 'border-[#d4af37]/60');
+            btn.classList.remove('bg-[#1e1e1e]', 'border-[rgba(212,175,55,0.25)]', 'text-on-surface-variant');
+            btn.classList.add('bg-[#d4af37]', 'border-[#d4af37]', 'text-[#0a0a0a]', 'shadow-[0_0_12px_rgba(212,175,55,0.4)]');
+            icon.textContent = 'check';
+          } else {
+            card.classList.remove('bg-[#1c1c1c]', 'gold-border-glow', 'border-[#d4af37]/60');
+            card.classList.add('bg-[#141414]', 'border-[rgba(212,175,55,0.2)]');
+            btn.classList.add('bg-[#1e1e1e]', 'border-[rgba(212,175,55,0.25)]', 'text-on-surface-variant');
+            btn.classList.remove('bg-[#d4af37]', 'border-[#d4af37]', 'text-[#0a0a0a]', 'shadow-[0_0_12px_rgba(212,175,55,0.4)]');
+            icon.textContent = 'add';
+          }
+        }
+
+        function syncState() {
+          let total = 0;
+          let minutes = 0;
+          selectedServices.forEach(item => {
+            total += item.price;
+            minutes += item.duration;
+          });
+
+          const count = selectedServices.size;
+          if (count === 0) {
+            dockCounter.textContent = 'Selecciona un ritual';
+            dockPrice.textContent = '₡0';
+            dockDuration.textContent = '· 0 min';
+            continueBtn.classList.add('opacity-40', 'pointer-events-none');
+          } else {
+            dockCounter.textContent = count === 1 ? '1 servicio seleccionado' : `${count} servicios seleccionados`;
+            dockPrice.textContent = `₡${total.toLocaleString('es-CR')}`;
+            dockDuration.textContent = `· ${minutes} min aprox`;
+            continueBtn.classList.remove('opacity-40', 'pointer-events-none');
+          }
+        }
+
+        cards.forEach(card => {
+          const id = card.getAttribute('data-id');
+          const name = card.getAttribute('data-name');
+          const price = parseInt(card.getAttribute('data-price'), 10);
+          const duration = parseInt(card.getAttribute('data-duration'), 10);
+
+          // Initialize preselected 01
+          if (id === '01') {
+            updateCardUI(card, true);
+          }
+
+          card.addEventListener('click', () => {
+            if (selectedServices.has(id)) {
+              selectedServices.delete(id);
+              updateCardUI(card, false);
+            } else {
+              selectedServices.set(id, { name, price, duration });
+              updateCardUI(card, true);
+            }
+            syncState();
+          });
+        });
+
+        // Interactive category chips filter
+        const chips = document.querySelectorAll('.filter-chip');
+        chips.forEach(chip => {
+          chip.addEventListener('click', (e) => {
+            chips.forEach(c => {
+              c.classList.remove('bg-[#d4af37]', 'text-[#0a0a0a]', 'gold-glow', 'border-[#d4af37]');
+              c.classList.add('bg-[#141414]', 'text-on-surface-variant', 'border-[rgba(212,175,55,0.2)]');
+            });
+            chip.classList.remove('bg-[#141414]', 'text-on-surface-variant', 'border-[rgba(212,175,55,0.2)]');
+            chip.classList.add('bg-[#d4af37]', 'text-[#0a0a0a]', 'gold-glow', 'border-[#d4af37]');
+          });
+        });
+
+        continueBtn.addEventListener('click', () => {
+          const link = document.querySelector('nav a[data-path="reservar"]');
+          if (link) {
+            link.click();
+          }
+        });
+
+        syncState();
+      })();
+    </script>
+</main>
+<!-- Luxury Metallic Gold Bottom Navigation -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe bg-[#0a0a0a]/95 backdrop-blur-xl border-t border-[rgba(212,175,55,0.2)] shadow-[0_-1px_20px_rgba(0,0,0,0.8)]" data-active-classes="text-[#d4af37]">
+<div class="flex justify-around items-center h-16 px-2">
+<a class="flex flex-col items-center justify-center gap-1 min-w-[56px] h-12 text-on-surface-variant/80 transition-colors hover:text-[#d4af37]" data-path="inicio" href="#">
+<span class="material-symbols-outlined text-[20px]">storefront</span>
+<span class="font-label-caps tracking-widest uppercase text-[9px]">Inicio</span>
+</a>
+<a aria-current="page" class="flex flex-col items-center justify-center gap-1 min-w-[56px] h-12 transition-colors text-[#d4af37] drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]" data-path="servicios" href="#">
+<span class="material-symbols-outlined text-[20px]">content_cut</span>
+<span class="font-label-caps tracking-widest uppercase text-[9px] font-semibold">Servicios</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 min-w-[56px] h-12 text-on-surface-variant/80 transition-colors hover:text-[#d4af37]" data-path="reservar" href="#">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="font-label-caps tracking-widest uppercase text-[9px]">Reservar</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 min-w-[56px] h-12 text-on-surface-variant/80 transition-colors hover:text-[#d4af37]" data-path="equipo" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="font-label-caps tracking-widest uppercase text-[9px]">Equipo</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 min-w-[56px] h-12 text-on-surface-variant/80 transition-colors hover:text-[#d4af37]" data-path="ubicacion" href="#">
+<span class="material-symbols-outlined text-[20px]">near_me</span>
+<span class="font-label-caps tracking-widest uppercase text-[9px]">Ubicación</span>
+</a>
+</div>
+</nav>
+</body></html>
