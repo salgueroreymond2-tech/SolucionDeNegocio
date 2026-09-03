@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const links = [
   ['Servicios', 'services'],
@@ -31,7 +32,8 @@ export default function Navbar() {
         <span />
       </button>
       <nav className={`main-nav ${isOpen ? 'is-open' : ''}`} aria-label="Navegacion principal">
-        {links.map(([label, id]) => (
+        <Link to="/servicios" onClick={() => setIsOpen(false)}>Servicios</Link>
+        {links.slice(1).map(([label, id]) => (
           <button key={id} type="button" onClick={() => handleNavigation(id)}>{label}</button>
         ))}
         <button className="nav-book" type="button" onClick={() => handleNavigation('contact')}>Reservar <span aria-hidden="true">↗</span></button>
