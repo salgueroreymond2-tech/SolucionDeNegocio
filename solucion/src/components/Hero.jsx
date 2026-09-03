@@ -13,7 +13,6 @@ export default function Hero() {
       </div>
       <div className="hero-image"><img src={interior} alt="Interior de The Barber Club CR" /><span>Sillón &amp; Navaja · Pandora Center</span></div>
       <div className="hero-note"><span>01</span><span>Est. 2016</span></div>
-      <div className="scroll-cue">Desliza para descubrir <span aria-hidden="true">↓</span></div>
     </section>
   )
 }
