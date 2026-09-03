@@ -16,7 +16,7 @@ export default function Navbar() {
   return (
     <header className="site-header">
       <Link className="brand" to="/" onClick={() => setIsOpen(false)}>
-        <img className="brand-logo" src={logo} alt="The Barber Club CR" />
+        <img className="brand-logo" src={logo} alt="b CR" />
       </Link>
       <button className="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded={isOpen} onClick={() => setIsOpen(!isOpen)}>
         <span />
