@@ -1,0 +1,10 @@
+{
+  "name": "solucion-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix solucion run dev",
+    "build": "npm --prefix solucion run build",
+    "lint": "npm --prefix solucion run lint",
+    "preview": "npm --prefix solucion run preview"
+  }
+}
