@@ -25,7 +25,7 @@ export default function Navbar() {
       </button>
       <nav className={`main-nav ${isOpen ? 'is-open' : ''}`} aria-label="Navegacion principal">
         {links.map(([label, path]) => <Link key={path} to={path} onClick={() => setIsOpen(false)}>{label}</Link>)}
-        <Link className="nav-book" to="/contacto" onClick={() => setIsOpen(false)}>Reservar <span aria-hidden="true">↗</span></Link>
+        <Link className="nav-book" to="/reservar" onClick={() => setIsOpen(false)}>Reservar <span aria-hidden="true">↗</span></Link>
       </nav>
     </header>
   )

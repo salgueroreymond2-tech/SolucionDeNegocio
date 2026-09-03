@@ -8,5 +8,5 @@ import ContactPage from '../pages/ContactPage'
 import DataPage from '../pages/DataPage'
 
 export default function AppRouter() {
-  return <BrowserRouter><Routes><Route path="/" element={<Home />} /><Route path="/servicios" element={<ServicesPage />} /><Route path="/equipo" element={<TeamPage />} /><Route path="/horario" element={<SchedulePage />} /><Route path="/ubicacion" element={<LocationPage />} /><Route path="/contacto" element={<ContactPage />} /><Route path="/datos" element={<DataPage />} /></Routes></BrowserRouter>
+  return <BrowserRouter><Routes><Route path="/" element={<Home />} /><Route path="/servicios" element={<ServicesPage />} /><Route path="/equipo" element={<TeamPage />} /><Route path="/horario" element={<SchedulePage />} /><Route path="/ubicacion" element={<LocationPage />} /><Route path="/contacto" element={<ContactPage />} /><Route path="/reservar" element={<DataPage />} /><Route path="/datos" element={<DataPage />} /></Routes></BrowserRouter>
 }
