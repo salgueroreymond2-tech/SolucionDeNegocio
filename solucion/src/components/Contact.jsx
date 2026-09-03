@@ -1,0 +1,3 @@
+export default function Contact() {
+  return <section className="contact" id="contact"><div><p className="eyebrow">Tu proximo look</p><h2>Hablamos?</h2><p className="contact-copy">Reserva tu cita por telefono o escribenos. Te esperamos con cafe y buena musica.</p></div><div className="contact-details"><a className="contact-phone" href="tel:+34915550142">+34 915 550 142</a><a href="mailto:hola@casabrava.es">hola@casabrava.es</a><div className="socials"><a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://wa.me/34915550142" target="_blank" rel="noreferrer">WhatsApp ↗</a></div></div></section>
+}

@@ -1,0 +1,3 @@
+export default function Location() {
+  return <section className="section location" id="location"><div className="location-copy"><p className="eyebrow">Encuentranos</p><h2>En el barrio,<br /><i>como en casa.</i></h2><address>Calle de Santa Barbara, 14<br />28004 · Madrid</address><a className="text-link" href="https://maps.google.com/?q=Calle+de+Santa+Barbara+14+Madrid" target="_blank" rel="noreferrer">Abrir en Google Maps <span aria-hidden="true">↗</span></a></div><div className="map-card" aria-label="Mapa de referencia de Casa Brava"><div className="map-grid" /><div className="map-pin"><span>Casa Brava</span></div><div className="map-label map-label-one">Malasana</div><div className="map-label map-label-two">Chueca</div></div></section>
+}
