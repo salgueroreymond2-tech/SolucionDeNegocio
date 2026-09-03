@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../assets/the-barber-club-logo.png'
+import logo from '../assets/the-barber-club-logo-new.jpeg'
 
 const links = [
   ['Servicios', '/servicios'],

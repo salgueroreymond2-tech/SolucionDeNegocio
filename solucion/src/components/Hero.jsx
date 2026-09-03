@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import interior from '../assets/the-barber-club-interior.png'
+import interior from '../assets/the-barber-club-interior.jpeg'
 
 export default function Hero() {
   return (
